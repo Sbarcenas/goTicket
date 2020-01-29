@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "529256884300",
+    "firebase_url": "https://testproject-bc744.firebaseio.com",
+    "project_id": "testproject-bc744",
+    "storage_bucket": "testproject-bc744.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529256884300:android:e18db14da24503c7ca2ce9",
+        "android_client_info": {
+          "package_name": "com.pandh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529256884300-l8elleicb4lg6jp4r1msb46ei4qf3s52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5QmQksZj1XiGeNnDnRbzJmtP_ZzfPLXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529256884300-l8elleicb4lg6jp4r1msb46ei4qf3s52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 
@@ -81,6 +82,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -182,7 +184,12 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation project(':react-native-navigation')
+    implementation project(':react-native-navigation') // RNN
+    // FIREBASE
+    implementation 'com.google.firebase:firebase-analytics:17.2.2' //FIREBASE BASE ANDROID
+
+
+
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
