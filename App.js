@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,8 +23,13 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {checkPermission} from './src/modules/Firebase';
 
 const App: () => React$Node = () => {
+  useEffect(() => {
+    checkPermission();
+  }, []);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
