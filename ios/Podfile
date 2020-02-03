@@ -37,6 +37,8 @@ target 'pandh' do
   ## RNN
   pod 'ReactNativeNavigation', :podspec => '../node_modules/react-native-navigation/ReactNativeNavigation.podspec'
   
+## AsyncStorage
+  
   ## FIREBASE
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
@@ -45,6 +47,7 @@ target 'pandh' do
   
   
   
+
   target 'pandhTests' do
     inherit! :search_paths
     # Pods for testing

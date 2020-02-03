@@ -15,6 +15,8 @@ import com.reactnativenavigation.react.ReactGateway;
 import java.util.Arrays;
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 import io.invertase.firebase.messaging.ReactNativeFirebaseMessagingPackage;
+//import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -40,7 +42,9 @@ protected List<ReactPackage> getPackages() {
 return Arrays.<ReactPackage>asList(
 // eg. new VectorIconsPackage()
         new ReactNativeFirebaseAppPackage(),
-        new ReactNativeFirebaseMessagingPackage()
+        new ReactNativeFirebaseMessagingPackage(),
+        new AsyncStoragePackage()
+        //new FBSDKPackage()
 );
 }
 

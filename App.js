@@ -5,7 +5,7 @@
  * @format
  * @flow
  */
-
+import AsyncStorage from '@react-native-community/async-storage';
 import React, {useEffect} from 'react';
 import {
   SafeAreaView,
@@ -24,9 +24,16 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import {checkPermission} from './src/modules/Firebase';
+import {Toaster} from './src/utils/helpers';
 
 const App: () => React$Node = () => {
   useEffect(() => {
+    Toaster({type: 'alert', text: 'este'});
+    AsyncStorage.setItem('token', '12331231231231').then(async () => {
+      let token = await AsyncStorage.getItem('token');
+      console.log(token);
+    });
+
     checkPermission();
   }, []);
 

@@ -136,6 +136,7 @@ android {
         missingDimensionStrategy "RNN.reactNativeVersion", "reactNative60"
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -185,8 +186,8 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation project(':react-native-navigation') // RNN
+    implementation 'com.android.support:multidex:1.0.3'
     // FIREBASE
-    implementation 'com.google.firebase:firebase-analytics:17.2.2' //FIREBASE BASE ANDROID
 
 
 

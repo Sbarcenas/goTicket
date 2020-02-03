@@ -1,5 +1,5 @@
 import messaging from '@react-native-firebase/messaging';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export const checkPermission = async () => {
   const enabled = await messaging().hasPermission();
