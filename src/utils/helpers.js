@@ -1,5 +1,6 @@
-import {Navigation} from "react-native-navigation";
-import {TOAST} from "../navigation";
+import {Navigation} from 'react-native-navigation';
+import {pushScreen, TOAST} from '../navigation';
+import {pushloginStackScreen} from '../navigation/layouts/stack';
 
 export const Toaster = passProps => {
   Navigation.showOverlay({
@@ -13,4 +14,8 @@ export const Toaster = passProps => {
       },
     },
   });
+};
+
+export const pushSingleScreen = async (componentId, toPush, props) => {
+  pushScreen(componentId, toPush, props);
 };

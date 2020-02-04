@@ -1,2 +1,9 @@
 export {default as HomeScreen} from './Home';
 export {default as LoginScreen} from './Login';
+export {default as RegisterScreen} from './Register';
+export {default as SideScreen} from './Side';
+export {default as AccountScreen} from './Account';
+export {default as EditProfile} from './Profile/EditProfile';
+export {default as Articles} from './Articles';
+export {default as Recents} from './Articles/tabs/Recents';
+export {default as Babies} from './Articles/tabs/Babies';

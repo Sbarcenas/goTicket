@@ -12,8 +12,14 @@ export const colors = {
   goldBase: '#FFD07C',
   mainPurple: '#FF3B90',
   opacityBlue: '#DAF6FD',
-  mainText: '#DAF6FD',
+  mainText: '#5F5F5F',
 };
 
-export const fonts = {};
+export const fonts = {
+  mainTittle: {
+    color: colors.mainText,
+    fontFamily: 'poppins',
+    fontSize: 39,
+  },
+};
 export const buttons = {};

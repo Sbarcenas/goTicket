@@ -1,8 +1,10 @@
-import {HOME_SCREEN} from '../screens';
+import {ARTICLES_SCREEN, HOME_SCREEN, SIDE_SCREEN} from '../screens';
 import {colors} from '../../utils/theme';
 import {Navigation} from 'react-native-navigation';
 import {} from '../../assets/';
 import {ARTICLES_ICON} from '../../assets/';
+import {GUIDES_ICON} from '../../assets/';
+import {GROWTH_ICON} from '../../assets/';
 
 export function pushTabBasedApp() {
   Navigation.setRoot({
@@ -10,11 +12,9 @@ export function pushTabBasedApp() {
       sideMenu: {
         left: {
           component: {
-            name: HOME_SCREEN.name,
+            name: SIDE_SCREEN.name,
             id: 'leftSideDrawer',
-            passProps: {
-              text: 'This is a left side menu screen',
-            },
+            passProps: {},
           },
         },
         center: {
@@ -25,7 +25,7 @@ export function pushTabBasedApp() {
                   children: [
                     {
                       component: {
-                        name: HOME_SCREEN.name,
+                        name: ARTICLES_SCREEN.name,
                         id: 'mainComponent',
                         options: {},
                       },
@@ -33,9 +33,9 @@ export function pushTabBasedApp() {
                   ],
                   options: {
                     bottomTab: {
-                      animate: true,
+                      animate: false,
                       backgroundColor: 'transparent',
-                      text: 'Home',
+                      text: 'Artículos',
                       icon: ARTICLES_ICON,
                       testID: 'HOME_SCREEN_BAR_BUTTON',
                     },
@@ -55,10 +55,10 @@ export function pushTabBasedApp() {
                   ],
                   options: {
                     bottomTab: {
-                      animate: true,
+                      animate: false,
                       backgroundColor: 'transparent',
-                      text: 'Express',
-                      icon: ARTICLES_ICON,
+                      text: 'Guías',
+                      icon: GUIDES_ICON,
                       testID: 'MY_PRODUCTS_BAR_BUTTON',
                     },
                   },
@@ -77,54 +77,11 @@ export function pushTabBasedApp() {
                   ],
                   options: {
                     bottomTab: {
-                      animate: true,
+                      animate: false,
                       backgroundColor: 'transparent',
-                      text: 'Bolsa',
-                      badge: 'New',
-                      badgeColor: colors.secondary,
-                      icon: ARTICLES_ICON,
+                      text: 'Crecimiento',
+                      icon: GROWTH_ICON,
                       testID: 'ADD_PRODUCT_BAR_BUTTON',
-                    },
-                  },
-                },
-              },
-              {
-                stack: {
-                  children: [
-                    {
-                      component: {
-                        name: HOME_SCREEN.name,
-                        options: {},
-                      },
-                    },
-                  ],
-                  options: {
-                    bottomTab: {
-                      animate: true,
-                      background: 'transparent',
-                      text: 'Wiki',
-                      icon: ARTICLES_ICON,
-                      testID: 'NOTIFICATIONS_BAR_BUTTON',
-                    },
-                  },
-                },
-              },
-              {
-                stack: {
-                  children: [
-                    {
-                      component: {
-                        name: HOME_SCREEN.name,
-                        options: {},
-                      },
-                    },
-                  ],
-                  options: {
-                    bottomTab: {
-                      animate: true,
-                      background: 'transparent',
-                      text: 'Cuenta',
-                      icon: ARTICLES_ICON,
                     },
                   },
                 },

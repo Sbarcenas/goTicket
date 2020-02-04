@@ -12,11 +12,12 @@ import java.util.List;
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.reactnativenavigation.react.ReactGateway;
-import java.util.Arrays;
+import java.util.Arrays; 
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 import io.invertase.firebase.messaging.ReactNativeFirebaseMessagingPackage;
 //import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+import com.reactnativecommunity.viewpager.RNCViewPagerPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -43,7 +44,8 @@ return Arrays.<ReactPackage>asList(
 // eg. new VectorIconsPackage()
         new ReactNativeFirebaseAppPackage(),
         new ReactNativeFirebaseMessagingPackage(),
-        new AsyncStoragePackage()
+        new AsyncStoragePackage(),
+        new RNCViewPagerPackage()
         //new FBSDKPackage()
 );
 }
