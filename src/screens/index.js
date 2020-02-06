@@ -7,3 +7,8 @@ export {default as EditProfile} from './Profile/EditProfile';
 export {default as Articles} from './Articles';
 export {default as Recents} from './Articles/tabs/Recents';
 export {default as Babies} from './Articles/tabs/Babies';
+export {default as Children} from './Articles/tabs/Children';
+export {default as TeenAgers} from './Articles/tabs/TeenAgers';
+export {default as Filter} from './Filter';
+export {default as Guide} from './Guide';
+export {default as Guides} from './Guides';

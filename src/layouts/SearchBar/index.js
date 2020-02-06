@@ -8,10 +8,11 @@ import {
   MORE_ICON,
 } from '../../assets/media/icons';
 import {colors} from '../../utils/theme';
+import {FILTER_SCREEN, pushScreen, showModal} from '../../navigation';
 const {height} = Dimensions.get('window');
 
 const Index = props => {
-  const {children, searchConfig = {}} = props;
+  const {children, searchConfig = {}, componentId} = props;
   return (
     <View>
       <View style={{height: height * 0.21}}>
@@ -35,7 +36,7 @@ const Index = props => {
         </View>
         <View
           style={{
-            marginTop: 10,
+            marginTop: 25,
             paddingHorizontal: 15,
             justifyContent: 'space-between',
             flexDirection: 'row',
@@ -57,7 +58,10 @@ const Index = props => {
             }}
           />
           <View style={{alignSelf: 'flex-end'}}>
-            <RoundedButton image={FILTER_ICON} />
+            <RoundedButton
+              image={FILTER_ICON}
+              onPress={() => showModal(FILTER_SCREEN.name, {})}
+            />
           </View>
         </View>
       </View>

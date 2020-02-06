@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, Text, TouchableWithoutFeedback} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  Image,
+} from 'react-native';
 import {RoundedButton} from '../index';
 import {colors, fonts} from '../../../utils/theme';
 
@@ -22,13 +28,13 @@ const IconText = props => {
     icon
       .filter(({orientation}) => orientation === position)
       .map((item, index) => (
-        <RoundedButton
-          tintColor={tintColor}
-          imageStyle={imageStyle || {tintColor: tintColor}}
-          key={index}
-          containerStyle={[styles.roundedButton, iconStyle]}
-          image={item.image}
-        />
+        <View style={[styles.roundedButton, iconStyle]}>
+          <Image
+            tintColor={tintColor}
+            style={imageStyle || {tintColor: tintColor}}
+            source={item.image}
+          />
+        </View>
       ));
   return (
     <TouchableWithoutFeedback onPress={onPress}>

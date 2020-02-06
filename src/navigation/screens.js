@@ -3,6 +3,9 @@ import {
   AccountScreen,
   Articles,
   EditProfile,
+  Filter,
+  Guide,
+  Guides,
   HomeScreen,
   LoginScreen,
   RegisterScreen,
@@ -27,6 +30,21 @@ export const EDIT_PROFILE_SCREEN = {
 };
 
 export const ARTICLES_SCREEN = {
-  name: 'pandh.articles',
+  name: 'pandh.articlesScreen',
   screen: Articles,
+};
+
+export const FILTER_SCREEN = {
+  name: 'pandh.filterScreen',
+  screen: Filter,
+};
+
+export const GUIDE_SCREEN = {
+  name: 'pandh.guideScreen',
+  screen: Guide,
+};
+
+export const GUIDES_SCREEN = {
+  name: 'pandh.guidesScreen',
+  screen: Guides,
 };

@@ -187,6 +187,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation project(':react-native-navigation') // RNN
     implementation 'com.android.support:multidex:1.0.3'
+    implementation project(':react-native-webview')
     // FIREBASE
 
 

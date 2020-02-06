@@ -13,3 +13,5 @@ export {default as RadioHash} from './Radio/RadioHash';
 export {default as IconText} from './Text/IconText';
 export {default as RecentCard} from './Cards/RecentCard';
 export {default as SelectableButton} from './Button/SelectableButton/SelectableButton';
+export {default as ShareHeader} from './headers/ShareHeader';
+export {default as Comment} from './Cards/Comment';

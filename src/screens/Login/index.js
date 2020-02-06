@@ -24,7 +24,6 @@ const Index = props => {
               textDecorationLine: 'none',
               fontWeight: 'bold',
               fontSize: 14,
-              fontFamily: 'poppins',
             }}
             style={{marginLeft: 5}}
             onPress={() =>

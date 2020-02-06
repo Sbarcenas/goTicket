@@ -25,7 +25,6 @@ const Index = props => {
               color: colors.mainPurple,
               textDecorationLine: 'none',
               fontSize: 12,
-              fontFamily: 'poppins',
               fontWeight: 'bold',
             }}
             style={{

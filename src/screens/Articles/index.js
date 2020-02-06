@@ -3,12 +3,14 @@ import {View, StyleSheet, Text, Dimensions} from 'react-native';
 import {AccountLayout, SearchBarLayout} from '../../layouts';
 import {colors} from '../../utils/theme';
 import {RecentCard, ViewPager} from '../../components/shared';
-import {Babies, Recents} from '../index';
+import {Babies, Children, Recents, TeenAgers} from '../index';
 const {height} = Dimensions.get('window');
 
 const Index = props => {
   return (
-    <SearchBarLayout searchConfig={searchConfig}>
+    <SearchBarLayout
+      searchConfig={searchConfig}
+      componentId={props.componentId}>
       <ViewPager
         titles={['Recientes', 'Bebés', 'Niños', 'Adolescentes']}
         style={{backgroundColor: 'transparent'}}
@@ -20,10 +22,10 @@ const Index = props => {
           <Babies />
         </View>
         <View>
-          <Text>1</Text>
+          <Children />
         </View>
         <View>
-          <Text>2</Text>
+          <TeenAgers />
         </View>
       </ViewPager>
     </SearchBarLayout>

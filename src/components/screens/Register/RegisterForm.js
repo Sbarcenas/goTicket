@@ -99,7 +99,6 @@ const RegisterForm = props => {
                 color: colors.mainPurple,
                 textDecorationLine: 'none',
                 fontSize: 13,
-                fontFamily: 'poppins',
               }}
               style={{
                 justifyContent: 'flex-start',

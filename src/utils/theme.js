@@ -18,7 +18,6 @@ export const colors = {
 export const fonts = {
   mainTittle: {
     color: colors.mainText,
-    fontFamily: 'poppins',
     fontSize: 39,
   },
 };

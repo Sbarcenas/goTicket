@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
-import {View, Image, StyleSheet, Dimensions, Text} from 'react-native';
+import {View, StyleSheet, Dimensions, Text, Image} from 'react-native';
 import {colors} from '../../../../utils/theme';
 const {width} = Dimensions.get('window');
+
 
 function RoundedImage(props) {
   const {image, containerStyle, tintColor, Child, imageStyle} = props;

@@ -1,4 +1,9 @@
-import {ARTICLES_SCREEN, HOME_SCREEN, SIDE_SCREEN} from '../screens';
+import {
+  ARTICLES_SCREEN,
+  GUIDES_SCREEN,
+  HOME_SCREEN,
+  SIDE_SCREEN,
+} from '../screens';
 import {colors} from '../../utils/theme';
 import {Navigation} from 'react-native-navigation';
 import {} from '../../assets/';
@@ -48,7 +53,7 @@ export function pushTabBasedApp() {
                     {
                       component: {
                         id: 'expressComponent',
-                        name: HOME_SCREEN.name,
+                        name: GUIDES_SCREEN.name,
                         options: {},
                       },
                     },

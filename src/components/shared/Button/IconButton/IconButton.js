@@ -1,6 +1,7 @@
 import React from 'react';
-import {TouchableOpacity, StyleSheet, Text, Image, View} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text, View, Image} from 'react-native';
 import {colors} from '../../../../utils/theme';
+
 
 const IconButton = props => {
   const {

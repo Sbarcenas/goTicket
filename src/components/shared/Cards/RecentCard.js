@@ -1,14 +1,15 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image, Dimensions} from 'react-native';
+import {View, StyleSheet, Text, Dimensions, Image} from 'react-native';
 import LinkText from '../Text/Linktext';
 import {colors} from '../../../utils/theme';
 import {IconText} from '../index';
 import {CROWN_ICON, HEART_ICON, PIPE_ICON} from '../../../assets/media/icons';
 import {ARTICLE_IMAGE} from '../../../assets/media/images';
+
 const {width} = Dimensions.get('window');
 
 const RecentCard = props => {
-  const {title, subtitle, text, isPremium} = props;
+  const {title, subtitle, text, isPremium, onPress} = props;
   return (
     <View style={styles.container}>
       <View style={{marginBottom: 10}}>
@@ -37,12 +38,6 @@ const RecentCard = props => {
             fontWeight: 'bold',
           }}
           icon={[{image: PIPE_ICON, orientation: 'left'}]}
-          iconStyle={{
-            marginLeft: -5,
-
-            alignSelf: 'center',
-            backgroundColor: 'transparent',
-          }}
           containerStyle={{marginTop: 10}}
         />
         <Text style={{fontSize: 20, color: colors.mainText}}>
@@ -50,18 +45,18 @@ const RecentCard = props => {
         </Text>
       </View>
       <View style={{marginBottom: 10}}>
-        <Text style={{color: colors.mainText, fontSize: 15}}>
-          {text ||
-            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam nostrud exerci'.substring(
-              0,
-              196,
-            )}
+        <Text>
+          <Text style={{color: colors.mainText, fontSize: 15}}>
+            {text ||
+              'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam nostrud exerci'.substring(
+                0,
+                196,
+              )}
+          </Text>
+          <Text onPress={onPress} style={{color: colors.mainPurple}}>
+            {' Continuar leyendo'}
+          </Text>
         </Text>
-        <LinkText
-          text="Continuar leyendo"
-          textStyle={{color: colors.mainPurple}}
-          style={{marginTop: -19, right: 20}}
-        />
       </View>
       <View>
         <Image source={ARTICLE_IMAGE} style={{borderRadius: 20}} />
