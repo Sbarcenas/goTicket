@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 import {IconText, RoundedButton, SearchInput} from '../../components/shared';
 import {BURGER_ICON, FILTER_ICON, MORE_ICON} from '../../assets/media/icons';
 import {colors} from '../../utils/theme';
@@ -9,7 +9,7 @@ const {height} = Dimensions.get('window');
 const Index = props => {
   const {children, searchConfig = {}, componentId} = props;
   return (
-    <View>
+    <ScrollView>
       <View style={{height: height * 0.21}}>
         <View
           style={{
@@ -55,7 +55,7 @@ const Index = props => {
         </View>
       </View>
       <View>{children}</View>
-    </View>
+    </ScrollView>
   );
 };
 

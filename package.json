@@ -10,13 +10,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@feathersjs/authentication-client": "^4.5.1",
-    "@feathersjs/feathers": "^4.5.1",
-    "@feathersjs/socketio-client": "^4.5.1",
+    "@feathersjs/authentication-client": "^1.0.11",
+    "@feathersjs/feathers": "^3.3.1",
+    "@feathersjs/socketio-client": "^1.2.1",
     "@react-native-community/async-storage": "^1.7.1",
     "@react-native-community/viewpager": "^3.3.0",
     "@react-native-firebase/app": "^6.2.0",
     "@react-native-firebase/messaging": "^6.2.0",
+    "algoliasearch": "^4.0.2",
     "axios": "^0.19.2",
     "formik": "^2.1.3",
     "native-base": "^2.13.8",

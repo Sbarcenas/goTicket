@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, StyleSheet, Text, Dimensions, Image} from 'react-native';
-import LinkText from '../Text/Linktext';
 import {colors} from '../../../utils/theme';
 import {IconText} from '../index';
 import {CROWN_ICON, HEART_ICON, PIPE_ICON} from '../../../assets/media/icons';
@@ -44,9 +43,14 @@ const RecentCard = props => {
           {subtitle || 'El chupo siempre controversial'}
         </Text>
       </View>
-      <View style={{marginBottom: 10}}>
+      <View
+        style={{
+          marginBottom: 30,
+          width: width * 0.9,
+        }}>
         <Text>
-          <Text style={{color: colors.mainText, fontSize: 15}}>
+          <Text
+            style={{color: colors.mainText, fontSize: 15, textAlign: 'right'}}>
             {text ||
               'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam nostrud exerci'.substring(
                 0,
@@ -59,7 +63,10 @@ const RecentCard = props => {
         </Text>
       </View>
       <View>
-        <Image source={ARTICLE_IMAGE} style={{borderRadius: 20}} />
+        <Image
+          source={ARTICLE_IMAGE}
+          style={{borderRadius: 20, width: width * 0.9}}
+        />
         <IconText
           text="6.4k"
           textStyle={{
@@ -81,7 +88,7 @@ const RecentCard = props => {
 };
 
 const styles = StyleSheet.create({
-  container: {maxWidth: width * 0.95},
+  container: {maxWidth: width * 0.9},
 });
 
 export default RecentCard;

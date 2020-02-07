@@ -29,3 +29,4 @@ export const HEART_GREEN_ICON = require('./green_heart.png');
 export const BACK_WHITE_ICON = require('./back_arrow_white.png');
 export const MORE_PURPLE_ICON = require('./more_purple.png');
 export const SLEEP_ICON = require('./sleeping.png');
+export const FIRST_AID_ICON = require('./first_aid.png');

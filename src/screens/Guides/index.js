@@ -121,7 +121,13 @@ const Index = props => {
         )}
         keyExtractor={({item}, index) => 'NotHub' + index}
       />
-      <ComponentSelector {...category} componentList={GUIDES_COMPONENT_LIST} />
+
+      <View style={{marginTop: 40, paddingHorizontal: 0}}>
+        <ComponentSelector
+          {...category}
+          componentList={GUIDES_COMPONENT_LIST}
+        />
+      </View>
     </GuidesLayout>
   );
 };

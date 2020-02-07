@@ -13,7 +13,14 @@ const GuideIcon = props => {
         ]}>
         <Image source={source || SLEEP_ICON} />
       </View>
-      <Text style={{textAlign: 'center'}}>Primeros Auxilios</Text>
+      <Text
+        style={{
+          textAlign: 'center',
+          fontSize: 10.5,
+          color: selected.id === id ? colors.mainPurple : colors.mainBlue,
+        }}>
+        {label || 'Primeros Auxilios'}
+      </Text>
     </TouchableOpacity>
   );
 };
