@@ -6,6 +6,7 @@ import {
   SIGN_OUT_ICON,
 } from '../../assets/media/icons';
 import {ACCOUNT_SCREEN, pushScreen, showModal} from '../../navigation';
+import {LOGOUT} from '../../redux/actions/authActions';
 
 export const MENU_ITEMS = [
   {
@@ -41,6 +42,6 @@ export const MENU_ITEMS = [
     name: 'Cerrrar',
     icon: SIGN_OUT_ICON,
     toIndexTab: null,
-    onPress: (item, dispatch) => {},
+    onPress: (item, dispatch) => dispatch(LOGOUT()),
   },
 ];

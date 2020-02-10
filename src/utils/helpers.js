@@ -5,7 +5,7 @@ import {pushloginStackScreen} from '../navigation/layouts/stack';
 export const Toaster = passProps => {
   Navigation.showOverlay({
     component: {
-      name: TOAST,
+      name: TOAST.name,
       passProps,
       options: {
         overlay: {

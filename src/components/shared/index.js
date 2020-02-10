@@ -21,3 +21,4 @@ export {default as HtmlRender} from './HtmlRender/HtmlRender';
 export {default as Radio} from './Radio/Radio';
 export {default as PregnancyCard} from './Cards/PregnancyCard';
 export {default as LactancyCard} from './Cards/LactancyCard';
+export {default as Toast} from './Toast';

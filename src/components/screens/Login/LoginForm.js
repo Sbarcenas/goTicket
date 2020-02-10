@@ -1,25 +1,28 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {IconButton, Input} from '../../shared';
-import {
-  ARTICLES_ICON,
-  LOCK_ICON,
-  MAIL_ICON,
-  RIGHT_ARROW,
-} from '../../../assets/media/icons';
+import {LOCK_ICON, MAIL_ICON, RIGHT_ARROW} from '../../../assets/media/icons';
 import {Formik} from 'formik';
 import {colors, fonts} from '../../../utils/theme';
 import LinkText from '../../shared/Text/Linktext';
-import {pushScreen, pushTabBasedApp} from '../../../navigation';
+import {pushTabBasedApp} from '../../../navigation';
+import {connect} from 'react-redux';
+import {LOGIN} from '../../../redux/actions/authActions';
 
 const LoginForm = props => {
+  const {login, componentId} = props;
+
+  const onLoginButton = ({email, password}) => {
+    login({email, password}).then(() => pushTabBasedApp());
+  };
+
   return (
     <View>
       <Text style={fonts.mainTittle}>Login</Text>
       <Formik
         initialValues={{email: '', password: ''}}
         onSubmit={values => {
-          alert(values);
+          onLoginButton(values);
         }}>
         {({handleChange, values, handleSubmit}) => (
           <View styles={styles.container}>
@@ -54,7 +57,7 @@ const LoginForm = props => {
               onPress={() => alert('Recovery pass')}
             />
             <IconButton
-              onPress={() => pushTabBasedApp()}
+              onPress={handleSubmit}
               icon={RIGHT_ARROW}
               title={'Continuar'}
               style={{
@@ -83,4 +86,12 @@ const styles = StyleSheet.create({
   container: {},
 });
 
-export default LoginForm;
+const mapStateToProps = state => ({});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    login: user => dispatch(LOGIN(user)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

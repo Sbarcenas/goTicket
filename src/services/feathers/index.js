@@ -20,16 +20,11 @@ export const childrens = client.service('childrens');
 export const login = async (email, password) => {
   try {
     // First try to log in with an     JWT
-    return await client.reAuthenticate();
   } catch (error) {
+    alert(error);
     // If that errors, log in with email/password
     // Here we would normally show a login page
     // to get the login information
-    return await client.authenticate({
-      email,
-      password,
-      strategy: 'local',
-    });
   }
 };
 

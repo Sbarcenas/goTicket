@@ -2,6 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import {MENU_ITEMS} from '../../../utils/constants/menuItems';
 import {MenuItem} from '../index';
+import {connect} from 'react-redux';
 
 const SideMenu = ({dispatch}) => {
   return (
@@ -28,4 +29,15 @@ const styles = StyleSheet.create({
   container: {},
 });
 
-export default SideMenu;
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  error: state.error,
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideMenu);

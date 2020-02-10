@@ -11,8 +11,9 @@ import {
   RegisterScreen,
   SideScreen,
 } from '../screens';
+import {Toast} from '../components/shared';
 
-export const TOAST = {name: 'pandh.toast', screen: Toaster};
+export const TOAST = {name: 'pandh.toast', screen: Toast};
 export const HOME_SCREEN = {name: 'pandh.homeScreen', screen: HomeScreen};
 export const LOGIN_SCREEN = {name: 'pandh.loginScreen', screen: LoginScreen};
 export const REGISTER_SCREEN = {

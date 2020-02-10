@@ -6,12 +6,12 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
 } from '../types';
-import {returnErrors} from './ErrorActions';
 import {users, logout as out, login as log} from '../../services/feathers';
 import {pushloginStackScreen} from '../../navigation/layouts/stack';
 
 import {LoginManager} from 'react-native-fbsdk';
-import {LOGIN_FB} from '../../services/actionService';
+import {Toaster} from '../../utils/helpers';
+// import {LOGIN_FB} from '../../services/actionService';
 
 // Register User
 export const REGISTER = ({
@@ -30,8 +30,9 @@ export const REGISTER = ({
       last_name,
       password,
       status: 'active',
-      gender: gender,
-      birthday: date,
+      role: 'user',
+      //gender: gender,
+      //birthday: date,
     })
     .then(res => {
       dispatch({
@@ -40,10 +41,10 @@ export const REGISTER = ({
       });
     })
     .catch(err => {
-      dispatch(returnErrors(err.message, err.code, 'REGISTER_FAIL'));
       dispatch({
         type: REGISTER_FAIL,
       });
+      Toaster({type: 'error', title: 'Error', text: err.message});
       throw err;
     });
 };
@@ -57,12 +58,13 @@ export const LOGIN = ({email, password}) => dispatch => {
         type: LOGIN_SUCCESS,
         payload: res.user,
       });
+      Toaster({type: 'success', title: 'Bienvenido'});
     })
     .catch(err => {
-      dispatch(returnErrors(err.message, err.code, 'LOGIN_FAIL'));
       dispatch({
         type: LOGIN_FAIL,
       });
+      Toaster({type: 'error', title: 'Error', text: err.message});
       throw err;
     });
 };
@@ -79,7 +81,7 @@ export const FACEBOOK_LOGIN = result => async dispatch => {
 };
 
 export const LOGOUT = () => async dispatch => {
-  await LoginManager.logOut();
+  //await LoginManager.logOut();
   return out()
     .then(() => {
       pushloginStackScreen();
@@ -88,7 +90,6 @@ export const LOGOUT = () => async dispatch => {
       });
     })
     .catch(err => {
-      dispatch(returnErrors(err.message, err.code, 'LOGOUT_FAIL'));
       throw err;
     });
 };

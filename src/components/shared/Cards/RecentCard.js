@@ -8,7 +8,7 @@ import {ARTICLE_IMAGE} from '../../../assets/media/images';
 const {width} = Dimensions.get('window');
 
 const RecentCard = props => {
-  const {title, subtitle, text, isPremium, onPress} = props;
+  const {title, subtitle, text, isPremium, onPress, cover_picture} = props;
   return (
     <View style={styles.container}>
       <View style={{marginBottom: 10}}>

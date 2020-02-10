@@ -11,8 +11,11 @@ import {Formik} from 'formik';
 import {colors, fonts} from '../../../utils/theme';
 import LinkText from '../../shared/Text/Linktext';
 import * as Yup from 'yup';
+import {connect} from 'react-redux';
+import {REGISTER} from '../../../redux/actions/authActions';
 
 const RegisterForm = props => {
+  const {addNewUser} = props;
   const SCHEMA = Yup.object().shape({
     password: Yup.string()
       .required('Contraseña requerida')
@@ -35,6 +38,10 @@ const RegisterForm = props => {
       .required('Required'),
   });
 
+  const addUser = values => {
+    addNewUser(values).then(() => popView());
+  };
+
   return (
     <View>
       <Text style={fonts.mainTittle}>Registro</Text>
@@ -48,7 +55,7 @@ const RegisterForm = props => {
           passwordConfirm: '',
         }}
         onSubmit={values => {
-          alert(values);
+          addUser({...values});
         }}>
         {({handleChange, values, handleSubmit}) => (
           <View styles={styles.container}>
@@ -108,6 +115,7 @@ const RegisterForm = props => {
               onPress={() => alert('Recovery pass')}
             />
             <IconButton
+              onPress={handleSubmit}
               icon={RIGHT_ARROW}
               title={'Crear cuenta'}
               style={{
@@ -136,4 +144,12 @@ const styles = StyleSheet.create({
   container: {},
 });
 
-export default RegisterForm;
+const mapStateToProps = state => ({});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addNewUser: user => dispatch(REGISTER(user)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);

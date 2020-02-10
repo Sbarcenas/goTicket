@@ -3,16 +3,15 @@ import feathers from '@feathersjs/feathers';
 import socketio from '@feathersjs/socketio-client';
 import auth from '@feathersjs/authentication-client';
 import AsyncStorage from '@react-native-community/async-storage';
+const rest = require('@feathersjs/rest-client');
 
-const socket = io('https://api.crianzaysalud.com.co', {
-  transports: ['socket'],
-  forceNew: true,
-});
+const URL = 'https://api.crianzaysalud.com.co';
 
 export const client = feathers();
 
-client.configure(socketio(socket));
+const restClient = rest(URL);
 
+client.configure(restClient.fetch(fetch));
 client.configure(
   auth({
     storage: AsyncStorage,
