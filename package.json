@@ -28,7 +28,7 @@
     "react-addons-update": "^15.6.2",
     "react-instantsearch": "^6.3.0",
     "react-instantsearch-native": "^6.3.0",
-    "react-native": "0.61.5",
+    "react-native": "0.62.3",
     "react-native-best-viewpager": "^1.0.2",
     "react-native-dropdownalert": "^4.2.1",
     "react-native-elements": "^1.2.7",
